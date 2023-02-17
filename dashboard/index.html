@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard do Aluno</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed h-100">
+            <div class="sidebar-sticky">
+              <!-- Conteúdo do sidebar -->
+              <div class="col-md-2 sidebar">
+
+                <img class="profile-image" src="perfil.png" alt="Imagem de perfil do usuário">
+                
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                      <ul class="navbar-nav flex-column text-left">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Página Inicial</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Calendário</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Notas</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="verDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ver
+                          </a>
+                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="verDropdown">
+                            <a class="dropdown-item" href="#">Aulas</a>
+                            <a class="dropdown-item" href="#">Calendário</a>
+                            <a class="dropdown-item" href="#">Provas</a>
+                            <a class="dropdown-item" href="#">Agenda</a>
+                          </div>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Atividades</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  
+        
+              </div>
+            </div>
+          </nav>
+
+          <main role="main" class="col-md-10 ml-sm-auto">
+            <!-- Conteúdo da página principal -->
+            <div class="col-md-12 content">
+
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                        <a class="navbar-brand d-block d-sm-none" href="#">
+                            <img class="profile-image" src="perfil.png" alt="Imagem de perfil do usuário">
+                        </a>
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                          <form class="form-inline my-2 my-lg-0 ml-auto">
+                            <div class="input-group">
+                              <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                              </div>
+                            </div>
+                          </form>
+                      
+                          <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user"></i> Login
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">Minha Conta</a>
+                                <a class="dropdown-item" href="#">Sair</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                      
+                </div>
+                
+                <div class="container mt-4">
+                    <div class="card-deck">
+                      <div class="card shadow">
+                        <div class="card-body">
+                          <h5 class="card-title">Projetos</h5>
+                          <p class="card-text">Aqui você pode visualizar seus projetos.</p>
+                          <a href="#" class="btn btn-primary">Ver projetos</a>
+                        </div>
+                      </div>
+                      <div class="card shadow">
+                        <div class="card-body">
+                          <h5 class="card-title">Questões</h5>
+                          <p class="card-text">Aqui você pode visualizar suas questões.</p>
+                          <a href="#" class="btn btn-primary">Ver questões</a>
+                        </div>
+                      </div>
+                      <div class="card shadow">
+                        <div class="card-body">
+                          <h5 class="card-title">Progresso</h5>
+                          <p class="card-text">Aqui você pode visualizar seu progresso.</p>
+                          <a href="#" class="btn btn-primary">Ver progresso</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+        
+                  <div class="container mt-4">
+        
+                    <!-- Progresso do estudante -->
+                    <div class="card shadow">
+                        <div class="card-body">
+                          <h5 class="card-title">Progresso</h5>
+                          <canvas id="progress-chart"></canvas>
+                        </div>
+                      </div>
+            
+                  </div>
+        
+              </div>
+          </main>
+
+      
+
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Dados de exemplo para o gráfico
+    const data = {
+      labels: ['Matemática', 'Ciências', 'História'],
+      datasets: [{
+        label: 'Progresso',
+        data: [80, 65, 90], // Percentagem em cada disciplina
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+      }]
+    };
+  
+    // Opções do gráfico
+    const options = {
+      responsive: false,
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            max: 100
+          }
+        }]
+      }
+    };
+  
+    // Cria o gráfico de pizza
+    const chart = new Chart('progress-chart', {
+      type: 'pie',
+      data: data,
+      options: options
+    });
+  </script>
+
+</body>
+</html>
